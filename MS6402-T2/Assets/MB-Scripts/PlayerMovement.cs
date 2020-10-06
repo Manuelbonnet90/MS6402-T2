@@ -4,50 +4,47 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // PC Properties
-    private Rigidbody2D RB_PC;
-    public float fl_PC_Move_Speed = 3;
-    public float fl_PC_Rot_speed = 90;
+    public float moveSpeed = 5f;
 
-    // Movement Properties
-    public bool bl_mouse_control;
+    public Rigidbody2D rb;
+    public Camera cam;
+    private GameObject mainCamera;
+    public GameObject cursor;
+    
+
+    Vector2 movement;
+    Vector2 mousePos;
+
+    private Vector3 mouseTarget; // used to calculate in the 
+
     // Start is called before the first frame update
     void Start()
     {
-        // Get the attached RigidBody 2D
-        RB_PC = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        mainCamera = GameObject.Find("Main Camera"); // get the reference of the main camre to be used later
+        cursor = GameObject.Find("Cursor"); // find the game object with name cursor
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        MovePC();
-        MovePC2();
+        mouseTarget = mainCamera.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y)); // this will get get the position of the mouse inside our Camera
+        cursor.transform.position = new Vector2(mouseTarget.x, mouseTarget.y); // transform the position of the mouse inside our camera using the GO cursor.
+
+        movement.x = Input.GetAxisRaw("Horizontal"); // Controls for the player movement
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime); // move the player position with rigidbody, plus the movespeed assigned in the variable using a fixer deltatime
+
+        Vector2 lookDir = mousePos - rb.position; // update the player position to face the cursor.
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f; // calculate the angle of the object 
+        rb.rotation = angle; // rorate the object with based on the angle calculated earlier
+
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+       
+       
     }
-    void MovePC2()
-    {
-        // Rotate with H axis    
-        transform.Rotate(0, 0, -Input.GetAxis("Horizontal") * fl_PC_Rot_speed * Time.deltaTime);
-        // Move with V axis
-        transform.Translate(Vector2.right * fl_PC_Move_Speed * Time.deltaTime * Input.GetAxis("Vertical"));
-        // Reset force
-        RB_PC.velocity = Vector2.zero;
+  
 
-    }//-----
-    void MovePC()
-    {
-        if (bl_mouse_control)
-        {
-            // Mouse Movement - check current mouse position compared to the last a move the PC accordingly
-            if (Input.mousePosition.y > (Camera.main.WorldToViewportPoint(transform.position).y * Screen.height) + 20) RB_PC.velocity = new Vector2(0, fl_PC_Move_Speed);
-            else if (Input.mousePosition.y < (Camera.main.WorldToViewportPoint(transform.position).y * Screen.height) - 20) RB_PC.velocity = new Vector2(0, -fl_PC_Move_Speed);
-            else RB_PC.velocity = new Vector2(0, 0);
-        }
-        else
-        {
-            // cursor movement - set velocity based on key input
-            RB_PC.velocity = new Vector2(Input.GetAxis("Horizontal") * fl_PC_Move_Speed, Input.GetAxis("Vertical") * fl_PC_Move_Speed);
-        }
-
-    }//-----
 }
