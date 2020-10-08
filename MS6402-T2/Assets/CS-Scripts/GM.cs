@@ -30,6 +30,49 @@ public class GM : MonoBehaviour
     }
     #endregion
 
+    #region Story
+
+    int currentStory1 = 1;
+    public static int Story1
+    {
+        get
+        {
+            return mSingleton.currentStory1;
+        }
+        set
+        {
+            mSingleton.currentStory1 = value;
+        }
+    }
+
+    int currentStory2 = 1;
+    public static int Story2
+    {
+        get
+        {
+            return mSingleton.currentStory2;
+        }
+        set
+        {
+            mSingleton.currentStory2 = value;
+        }
+    }
+
+    string currentStory3 = "default";
+    public static string Story3
+    {
+        get
+        {
+            return mSingleton.currentStory3;
+        }
+        set
+        {
+            mSingleton.currentStory3 = value;
+        }
+    }
+
+    #endregion
+
     #region Time
 
 
@@ -69,7 +112,7 @@ public class GM : MonoBehaviour
     #endregion
 
     private bool gameOver = false;
-    public GameObject objectPC;
+    //public GameObject objectPC;
 
     public static bool GameOver
     {
@@ -94,11 +137,11 @@ public class GM : MonoBehaviour
     private float gameOverWaitTime = 5.0f;
     private bool startTime = false;
 
-    public GameObject controlsUI;
+    //public GameObject controlsUI;
     private void Start()
     {
-        controlsUI.SetActive(true);
-        Destroy(controlsUI, 10.0f);
+        //controlsUI.SetActive(true);
+        //Destroy(controlsUI, 10.0f);
     }
 
     private void Update()
