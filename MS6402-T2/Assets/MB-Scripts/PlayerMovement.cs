@@ -32,10 +32,10 @@ public class PlayerMovement : MonoBehaviour
         mouseTarget = mainCamera.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y)); // this will get get the position of the mouse inside our Camera
         cursor.transform.position = new Vector2(mouseTarget.x, mouseTarget.y); // transform the position of the mouse inside our camera using the GO cursor.
 
-        //movement.x = Input.GetAxisRaw("Horizontal"); // Controls for the player movement
-        //movement.y = Input.GetAxisRaw("Vertical");
-        transform.Translate(Vector3.forward * moveSpeed * Time.fixedDeltaTime* Input.GetAxis("Vertical"));
-        transform.Translate(Vector3.left * moveSpeed * Time.fixedDeltaTime * Input.GetAxis("Horizontal"));
+        movement.x = Input.GetAxisRaw("Horizontal"); // Controls for the player movement
+        movement.y = Input.GetAxisRaw("Vertical");
+        //transform.Translate(Vector3.forward * moveSpeed * Time.fixedDeltaTime* Input.GetAxis("Vertical"));
+        //transform.Translate(Vector3.left * moveSpeed * Time.fixedDeltaTime * Input.GetAxis("Horizontal"));
 
         //rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime); // move the player position with rigidbody, plus the movespeed assigned in the variable using a fixer deltatime
 
