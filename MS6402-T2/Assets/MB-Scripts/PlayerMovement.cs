@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         //transform.Translate(Vector3.forward * moveSpeed * Time.fixedDeltaTime* Input.GetAxis("Vertical"));
         //transform.Translate(Vector3.left * moveSpeed * Time.fixedDeltaTime * Input.GetAxis("Horizontal"));
 
-        //rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime); // move the player position with rigidbody, plus the movespeed assigned in the variable using a fixer deltatime
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime); // move the player position with rigidbody, plus the movespeed assigned in the variable using a fixer deltatime
 
         Vector2 lookDir = mousePos - rb.position; // update the player position to face the cursor.
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f; // calculate the angle of the object 
