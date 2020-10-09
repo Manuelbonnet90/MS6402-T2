@@ -31,23 +31,54 @@ public class GM : MonoBehaviour
     }
     #endregion
 
-    #region Story
+    #region Stories
 
-    int currentStory1 = 1;
-    public static int Story1
+    #region Story1
+    string currentStory1Answer1 = "Machete";
+    public static string Story1Answer1
     {
         get
         {
-            return mSingleton.currentStory1;
+            return mSingleton.currentStory1Answer1;
         }
         set
         {
-            mSingleton.currentStory1 = value;
+            mSingleton.currentStory1Answer1 = value;
         }
     }
 
-    int currentStory2 = 1;
-    public static int Story2
+    string currentStory1Answer2 = "true";
+    public static string Story1Answer2
+    {
+        get
+        {
+            return mSingleton.currentStory1Answer2;
+        }
+        set
+        {
+            mSingleton.currentStory1Answer2 = value;
+        }
+    }
+
+    string currentStory1Answer3 = "Cameron";
+    public static string Story1Answer3
+    {
+        get
+        {
+            return mSingleton.currentStory1Answer3;
+        }
+        set
+        {
+            mSingleton.currentStory1Answer3 = value;
+        }
+    }
+
+    #endregion
+
+    #region Story2
+
+    string currentStory2 = "Yes";
+    public static string Story2Answer1
     {
         get
         {
@@ -58,9 +89,38 @@ public class GM : MonoBehaviour
             mSingleton.currentStory2 = value;
         }
     }
+    string currentStory2Answer2 = "Jessica";
+    public static string Story2Answer2
+    {
+        get
+        {
+            return mSingleton.currentStory2Answer2;
+        }
+        set
+        {
+            mSingleton.currentStory2Answer2 = value;
+        }
+    }
+
+    string currentStory2Answer3 = "Squidward3965";
+    public static string Story2Answer3
+    {
+        get
+        {
+            return mSingleton.currentStory2Answer3;
+        }
+        set
+        {
+            mSingleton.currentStory2Answer3 = value;
+        }
+    }
+
+    #endregion
+
+    #region Story3
 
     string currentStory3 = "default";
-    public static string Story3
+    public static string Story3Answer1
     {
         get
         {
@@ -71,6 +131,34 @@ public class GM : MonoBehaviour
             mSingleton.currentStory3 = value;
         }
     }
+
+    int currentStory3Answer2 = 1;
+    public static int Story3Answer2
+    {
+        get
+        {
+            return mSingleton.currentStory3Answer2;
+        }
+        set
+        {
+            mSingleton.currentStory3Answer2 = value;
+        }
+    }
+
+    int currentStory3Answer3 = 1;
+    public static int Story3Answer3
+    {
+        get
+        {
+            return mSingleton.currentStory3Answer3;
+        }
+        set
+        {
+            mSingleton.currentStory3Answer3 = value;
+        }
+    }
+
+    #endregion
 
     #endregion
 
@@ -131,6 +219,23 @@ public class GM : MonoBehaviour
         }
     }
 
+    private float victoryTime = 0.0f;
+    private float victoryWaitTime = 5.0f;
+    private bool startVictoryTime = false;
+    private bool gameVictory = false;
+    public static bool Victory
+    {
+        get
+        {
+            return mSingleton.gameVictory;
+        }
+        set
+        {
+            mSingleton.gameVictory = value;
+
+        }
+    }
+
 
     public static void StartTime()
     {
@@ -179,6 +284,30 @@ public class GM : MonoBehaviour
             }
 
         }
+
+        if (gameVictory)
+        {
+
+            if (!startVictoryTime)
+            {
+                victoryTime = Time.time + victoryWaitTime;
+            }
+
+            startVictoryTime = true;
+
+            if (startVictoryTime)
+            {
+                if (Time.time > victoryTime)
+                {
+                    //GM.ResetVariables();
+                    Cursor.lockState = CursorLockMode.None;
+                    SceneManager.LoadScene("Menu");
+                }
+            }
+
+        }
+
+
 
     }
 

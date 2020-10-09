@@ -7,6 +7,8 @@ public class Story1 : MonoBehaviour
     public GameObject goQ1;
     public GameObject goQ2;
     public GameObject goQ3;
+
+    public bool blFinalDoor = false;
     
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,11 @@ public class Story1 : MonoBehaviour
     {
         if(goQ1==null && goQ2==null && goQ3 == null)
         {
+            if(blFinalDoor == true)
+            {
+                GM.Victory = true;
+            }
+            GM.Timer += 10;
             Destroy(gameObject);
         }
     }
