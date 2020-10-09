@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: QUESTION HERE?
+  m_Text: The name of the victim was?
 --- !u!222 &44586771
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 120429334}
   - component: {fileID: 120429333}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -498,7 +498,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: QUESTION HERE?
+  m_Text: Was the victim murderd in this room?
 --- !u!222 &135159861
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -545,7 +545,7 @@ GameObject:
   - component: {fileID: 173389749}
   - component: {fileID: 173389748}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -826,11 +826,9 @@ MonoBehaviour:
   intQuestionNumber: 1
   intStoryNumber: 1
   stAnswers:
-  - test0
-  - test1
-  - test2
-  - test3
-  - test4
+  - Kitchen Knife
+  - Gun
+  - Hammer
   blCorrectAnswer: 0
   txtAnswer: {fileID: 754328721}
   txtIncorrect:
@@ -1028,14 +1026,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595d55d1d54e6e6469652ce6cc64a13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intQuestionNumber: 1
+  intQuestionNumber: 2
   intStoryNumber: 1
   stAnswers:
-  - test0
-  - test1
-  - test2
-  - test3
-  - test4
+  - False
   blCorrectAnswer: 0
   txtAnswer: {fileID: 754328721}
   txtIncorrect:
@@ -1237,6 +1231,7 @@ GameObject:
   - component: {fileID: 595704350}
   - component: {fileID: 595704349}
   - component: {fileID: 595704348}
+  - component: {fileID: 595704352}
   m_Layer: 0
   m_Name: TriggerQ3
   m_TagString: Untagged
@@ -1340,6 +1335,27 @@ Transform:
   m_Father: {fileID: 1321217380}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &595704352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595704347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 595d55d1d54e6e6469652ce6cc64a13e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intQuestionNumber: 3
+  intStoryNumber: 1
+  stAnswers:
+  - Jessica
+  - Stacey
+  blCorrectAnswer: 0
+  txtAnswer: {fileID: 1277009475}
+  txtIncorrect:
+  - {fileID: 120429333}
 --- !u!1 &754328719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,7 +1507,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: QUESTION HERE?
+  m_Text: What weapon was used for the murder?
 --- !u!222 &785460456
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1728,13 +1744,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 450563210}
+        m_TargetAssemblyTypeName: Question, Assembly-CSharp
+        m_MethodName: CorrectAnswer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1860,13 +1876,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 595704352}
+        m_TargetAssemblyTypeName: Question, Assembly-CSharp
+        m_MethodName: IncorrectAnswer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2070,7 +2086,7 @@ GameObject:
   - component: {fileID: 1277009476}
   - component: {fileID: 1277009475}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2500,7 +2516,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1564536713}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 450563210}
+        m_TargetAssemblyTypeName: Question, Assembly-CSharp
+        m_MethodName: IncorrectAnswer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1564536713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2664,6 +2692,7 @@ MonoBehaviour:
   goQ1: {fileID: 263091353}
   goQ2: {fileID: 450563205}
   goQ3: {fileID: 595704347}
+  blFinalDoor: 0
 --- !u!1 &1618203207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2912,7 +2941,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1668341708}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 595704352}
+        m_TargetAssemblyTypeName: Question, Assembly-CSharp
+        m_MethodName: CorrectAnswer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1668341708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2963,7 +3004,7 @@ GameObject:
   - component: {fileID: 1778569990}
   - component: {fileID: 1778569989}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

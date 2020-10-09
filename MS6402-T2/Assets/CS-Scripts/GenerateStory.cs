@@ -7,9 +7,9 @@ public class GenerateStory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GM.Story1 = GenerateStory1();
-        GM.Story2 = GenerateStory2();
-        GM.Story3 = GenerateStory3();
+        //GM.Story1 = GenerateStory1();
+        //GM.Story2 = GenerateStory2();
+        //GM.Story3 = GenerateStory3();
     }
 
     //Story 1 is a multiple choice question so requires at least three options preferbly 5

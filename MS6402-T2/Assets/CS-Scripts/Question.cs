@@ -15,30 +15,79 @@ public class Question : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GM.Story1 == 0)
+        //if (GM.Story1 == 0)
+        //{
+        //    txtAnswer.text = stAnswers[0];
+        //}
+        //else if (GM.Story1 == 1)
+        //{
+        //    txtAnswer.text = stAnswers[1];
+        //}
+        //else if (GM.Story1 == 2)
+        //{
+        //    txtAnswer.text = stAnswers[2];
+        //}
+        //else if (GM.Story1 == 3)
+        //{
+        //    txtAnswer.text = stAnswers[3];
+        //}
+        //else if (GM.Story1 == 4)
+        //{
+        //    txtAnswer.text = stAnswers[4];
+        //}
+
+        if (intStoryNumber == 1)
         {
-            txtAnswer.text = stAnswers[0];
+            if (intQuestionNumber == 1)
+            {
+                txtAnswer.text = GM.Story1Answer1.ToString();
+            }
+            else if (intQuestionNumber == 2)
+            {
+                txtAnswer.text = GM.Story1Answer2.ToString();
+
+            }
+            else if (intQuestionNumber == 3)
+            {
+                txtAnswer.text = GM.Story1Answer3.ToString();
+            }
         }
-        else if (GM.Story1 == 1)
+        else if(intStoryNumber == 2)
         {
-            txtAnswer.text = stAnswers[1];
+            if (intQuestionNumber == 1)
+            {
+                txtAnswer.text = GM.Story2Answer1.ToString();
+            }
+            else if (intQuestionNumber == 2)
+            {
+                txtAnswer.text = GM.Story2Answer2.ToString();
+
+            }
+            else if (intQuestionNumber == 3)
+            {
+                txtAnswer.text = GM.Story2Answer3.ToString();
+            }
         }
-        else if (GM.Story1 == 2)
+        else if (intStoryNumber == 3)
         {
-            txtAnswer.text = stAnswers[2];
-        }
-        else if (GM.Story1 == 3)
-        {
-            txtAnswer.text = stAnswers[3];
-        }
-        else if (GM.Story1 == 4)
-        {
-            txtAnswer.text = stAnswers[4];
+            if (intQuestionNumber == 1)
+            {
+                txtAnswer.text = GM.Story3Answer1.ToString();
+            }
+            else if (intQuestionNumber == 2)
+            {
+                txtAnswer.text = GM.Story3Answer2.ToString();
+
+            }
+            else if (intQuestionNumber == 3)
+            {
+                txtAnswer.text = GM.Story3Answer3.ToString();
+            }
         }
 
-        for(int i=0; i< txtIncorrect.Length; i++)
+        for (int i=0; i< txtIncorrect.Length; i++)
         {
-            txtIncorrect[i].text = stAnswers[Random.Range(0, 4)];
+            txtIncorrect[i].text = stAnswers[Random.Range(0, stAnswers.Length)];
         }
     }
 

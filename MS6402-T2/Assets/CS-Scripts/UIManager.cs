@@ -27,6 +27,10 @@ public class UIManager : MonoBehaviour
         {
             goGameOver.SetActive(true);
         }
+        if(goVictory!=null && GM.Victory)
+        {
+            goVictory.SetActive(true);
+        }
 
     }
 
