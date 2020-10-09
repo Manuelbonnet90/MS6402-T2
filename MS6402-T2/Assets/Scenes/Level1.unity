@@ -1356,7 +1356,7 @@ MonoBehaviour:
   letterPause: 0.1
   storyText: {fileID: 85942845}
   countdownText: {fileID: 319313950}
-  currentTime: 5
+  currentTime: 15
   animator: {fileID: 0}
 --- !u!95 &1218009032
 Animator:
