@@ -7,6 +7,8 @@ public class TriggerQuestion : MonoBehaviour
 {
     public GameObject Question;
     public GameObject goPlayer;
+
+    public GameObject goMouse;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,5 +34,15 @@ public class TriggerQuestion : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Question.SetActive(true);
+    }
+    void OnMouseEnter() 
+    {
+        goMouse.SetActive(true);
+
+    }
+
+    void OnMouseExit()
+    {
+        goMouse.SetActive(false);
     }
 }

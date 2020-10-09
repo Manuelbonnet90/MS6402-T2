@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
     Vector2 mousePos;
 
+    public Animator animator;
     private Vector3 mouseTarget; // used to calculate in the 
 
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         mainCamera = GameObject.Find("Main Camera"); // get the reference of the main camre to be used later
         cursor = GameObject.Find("Cursor"); // find the game object with name cursor
+        animator = GetComponent<Animator>();
 
     }
 
@@ -33,7 +35,9 @@ public class PlayerMovement : MonoBehaviour
         cursor.transform.position = new Vector2(mouseTarget.x, mouseTarget.y); // transform the position of the mouse inside our camera using the GO cursor.
 
         movement.x = Input.GetAxisRaw("Horizontal"); // Controls for the player movement
-        movement.y = Input.GetAxisRaw("Vertical");
+        movement.y = Input.GetAxisRaw("Vertical"); 
+        
+            
         //transform.Translate(Vector3.forward * moveSpeed * Time.fixedDeltaTime* Input.GetAxis("Vertical"));
         //transform.Translate(Vector3.left * moveSpeed * Time.fixedDeltaTime * Input.GetAxis("Horizontal"));
 
@@ -44,8 +48,24 @@ public class PlayerMovement : MonoBehaviour
         rb.rotation = angle; // rorate the object with based on the angle calculated earlier
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-       
-       
+
+        if (Input.GetAxis("Horizontal")<0)
+            {
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }
+
+        if (Input.GetAxis("Vertical") < 0)
+        {
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }
     }
   
 

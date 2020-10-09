@@ -6,11 +6,14 @@ using UnityEngine.UI;
 
 public class TypingEffect : MonoBehaviour
 {
+    [TextArea(5, 10)]
     public string sentences;
+
+
     public float letterPause = 0.2f;
     public AudioSource typeSound1;
 
-
+    
     public Text storyText;
 
     public Text countdownText;
@@ -58,6 +61,7 @@ public class TypingEffect : MonoBehaviour
             countdownText.GetComponent<Text>().enabled = false;
             animator.SetBool("IsOpen", false);
             GM.StartTime();
+            typeSound1.Stop();
             StopAllCoroutines();
         }
     }

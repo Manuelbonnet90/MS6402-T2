@@ -30,7 +30,7 @@ public class Story1 : MonoBehaviour
             if (!blFinalDoor)
             {
                 Camera.main.transform.position = new Vector3(0, 10, -10);
-                goPC.transform.position = new Vector3(-0.2f, 10, 0);
+                goPC.transform.position = new Vector3(-0.1f, 6, 0);
             }
             GM.Timer += 10;
             Destroy(gameObject);
