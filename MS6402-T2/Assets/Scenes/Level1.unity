@@ -1557,7 +1557,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 8d5babff9013c8543b76234f883744a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2328,7 +2328,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d1796c5e9a70a744b8f2ac91d6f24924, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4573,7 +4573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1033634309221136599, guid: 55ec5539a449171459e0ae9c7db771f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.139
       objectReference: {fileID: 0}
     - target: {fileID: 1033634309221136599, guid: 55ec5539a449171459e0ae9c7db771f5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4613,7 +4613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1033634309221136599, guid: 55ec5539a449171459e0ae9c7db771f5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 9.5
+      value: 9.2224655
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55ec5539a449171459e0ae9c7db771f5, type: 3}
@@ -7902,7 +7902,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 04b18cd896ceac646a8e9f8f7b25270b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9409,6 +9409,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8550888626201575060, guid: a3fea264e2ec2b64d886b23e8bac8c76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550888626201575061, guid: a3fea264e2ec2b64d886b23e8bac8c76, type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8550888626201575062, guid: a3fea264e2ec2b64d886b23e8bac8c76, type: 3}
