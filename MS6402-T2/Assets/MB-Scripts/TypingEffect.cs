@@ -8,6 +8,8 @@ public class TypingEffect : MonoBehaviour
 {
     public string sentences;
     public float letterPause = 0.2f;
+    public AudioSource typeSound1;
+
 
     public Text storyText;
 
@@ -18,10 +20,14 @@ public class TypingEffect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        typeSound1 = GetComponent<AudioSource>();
         //startTime = Time.time;
         animator = GetComponent<Animator>();
         animator.SetBool("IsOpen", true);
-     
+
+        typeSound1.Play();
+
         StartCoroutine(TypeSentence());
 
         
@@ -35,6 +41,7 @@ public class TypingEffect : MonoBehaviour
         //Debug.Log("Work");
         foreach(char letter in sentences.ToCharArray())
         {
+            
             storyText.text += letter;
             yield return new WaitForSeconds(letterPause);
         }
