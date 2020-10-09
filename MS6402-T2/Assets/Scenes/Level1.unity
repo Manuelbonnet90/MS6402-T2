@@ -883,7 +883,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263091353}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -428.55426, y: -235.21481, z: 0}
+  m_LocalPosition: {x: -457, y: -251.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1293649809}
@@ -912,6 +912,8 @@ MonoBehaviour:
   - test4
   blCorrectAnswer: 0
   txtAnswer: {fileID: 754328721}
+  txtIncorrect:
+  - {fileID: 1946207952}
 --- !u!1 &319313948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,6 +1070,7 @@ GameObject:
   - component: {fileID: 450563208}
   - component: {fileID: 450563207}
   - component: {fileID: 450563206}
+  - component: {fileID: 450563210}
   m_Layer: 0
   m_Name: TriggerQ2
   m_TagString: Untagged
@@ -1164,13 +1167,37 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450563205}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -424.48, y: -241.95, z: 0}
+  m_LocalPosition: {x: -451.3, y: -257.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1876289597}
   m_Father: {fileID: 1321217380}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &450563210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450563205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 595d55d1d54e6e6469652ce6cc64a13e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intQuestionNumber: 1
+  intStoryNumber: 1
+  stAnswers:
+  - test0
+  - test1
+  - test2
+  - test3
+  - test4
+  blCorrectAnswer: 0
+  txtAnswer: {fileID: 754328721}
+  txtIncorrect:
+  - {fileID: 1946207952}
 --- !u!4 &487669527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1033634309221136599, guid: 55ec5539a449171459e0ae9c7db771f5, type: 3}
@@ -1367,7 +1394,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595704347}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -415.35, y: -240.06, z: 0}
+  m_LocalPosition: {x: -443.3, y: -254.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2062687865}
@@ -1386,7 +1413,7 @@ GameObject:
   - component: {fileID: 754328722}
   - component: {fileID: 754328721}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Button1Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3267,7 +3294,7 @@ GameObject:
   - component: {fileID: 1946207953}
   - component: {fileID: 1946207952}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Button2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

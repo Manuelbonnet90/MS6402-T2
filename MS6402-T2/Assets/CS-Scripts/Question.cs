@@ -10,6 +10,7 @@ public class Question : MonoBehaviour
     public string[] stAnswers;
     public bool blCorrectAnswer = false;
     public Text txtAnswer;
+    public Text[] txtIncorrect;
     
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,10 @@ public class Question : MonoBehaviour
             txtAnswer.text = stAnswers[4];
         }
 
+        for(int i=0; i< txtIncorrect.Length; i++)
+        {
+            txtIncorrect[i].text = stAnswers[Random.Range(0, 4)];
+        }
     }
 
     // Update is called once per frame
