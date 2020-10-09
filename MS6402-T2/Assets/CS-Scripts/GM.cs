@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GM : MonoBehaviour
 {
@@ -103,18 +104,43 @@ public class GM : MonoBehaviour
         {
             mSingleton.currentTime -= Time.deltaTime;
         }
+        else
+        {
+            mSingleton.gameOver = true;
+        }
+            
 
 
     }
 
     #endregion
 
+    private bool gameOver = false;
+    //public GameObject objectPC;
+
+    public static bool GameOver
+    {
+        get
+        {
+            return mSingleton.gameOver;
+        }
+        set
+        {
+            mSingleton.gameOver = value;
+            
+        }
+    }
+
+
     public static void StartTime()
     {
         mSingleton.startTime = true;
     }
 
+    private float gameOverTime = 0.0f;
+    private float gameOverWaitTime = 5.0f;
     private bool startTime = false;
+    private bool startGameOverTime = false;
 
     //public GameObject controlsUI;
     private void Start()
@@ -130,6 +156,28 @@ public class GM : MonoBehaviour
         {
             CountTime();
             //Timer = -1 * Time.deltaTime;
+        }
+
+        if (gameOver)
+        {
+            
+            if (!startGameOverTime)
+            {
+                gameOverTime = Time.time + gameOverWaitTime;
+            }
+            
+            startGameOverTime = true;
+            
+            if (startGameOverTime)
+            {
+                if (Time.time > gameOverTime)
+                {
+                    //GM.ResetVariables();
+                    Cursor.lockState = CursorLockMode.None;
+                    SceneManager.LoadScene("Menu");
+                }
+            }
+
         }
 
     }

@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Text textTime;
+    public GameObject goGameOver;
+    public GameObject goVictory;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,11 @@ public class UIManager : MonoBehaviour
         {
             textTime.text = "Time: " + Mathf.RoundToInt(GM.Timer);
         }
+        if(goGameOver!=null && GM.GameOver)
+        {
+            goGameOver.SetActive(true);
+        }
+
     }
 
     void DisplayWindow()
