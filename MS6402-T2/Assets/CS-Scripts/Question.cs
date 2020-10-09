@@ -11,6 +11,7 @@ public class Question : MonoBehaviour
     public bool blCorrectAnswer = false;
     public Text txtAnswer;
     public Text[] txtIncorrect;
+    public GameObject Panel;
     
     // Start is called before the first frame update
     void Start()
@@ -99,6 +100,7 @@ public class Question : MonoBehaviour
         if (blCorrectAnswer)
         {
             Destroy(gameObject);
+            Destroy(Panel);
         }
     }
 
