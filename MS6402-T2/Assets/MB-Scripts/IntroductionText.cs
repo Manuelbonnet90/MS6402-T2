@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class IntroductionText : MonoBehaviour
 {
-
+    [TextArea(5,20)]
     public string sentences;
     public float letterPause = 0.2f;
     public AudioSource typeSound1;
