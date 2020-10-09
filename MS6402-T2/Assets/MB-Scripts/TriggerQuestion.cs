@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TriggerQuestion : MonoBehaviour
 {
     public GameObject Question;
+    public GameObject goPlayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,13 @@ public class TriggerQuestion : MonoBehaviour
         {
             Question.SetActive(false);
         }
+
+        if (Vector2.Distance(goPlayer.transform.position, gameObject.transform.position) < 2)
+        {
+            Question.SetActive(true);
+        }
+        else
+            Question.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
