@@ -103,38 +103,17 @@ public class GM : MonoBehaviour
         {
             mSingleton.currentTime -= Time.deltaTime;
         }
-        else
-            mSingleton.gameOver = true;
 
 
     }
 
     #endregion
 
-    private bool gameOver = false;
-    //public GameObject objectPC;
-
-    public static bool GameOver
-    {
-        get
-        {
-            return mSingleton.gameOver;
-        }
-        set
-        {
-            mSingleton.gameOver = value;
-        }
-    }
-
-
     public static void StartTime()
     {
         mSingleton.startTime = true;
     }
 
-
-    private float gameOverTime = 0.0f;
-    private float gameOverWaitTime = 5.0f;
     private bool startTime = false;
 
     //public GameObject controlsUI;
@@ -142,17 +121,16 @@ public class GM : MonoBehaviour
     {
         //controlsUI.SetActive(true);
         //Destroy(controlsUI, 10.0f);
+        
     }
 
     private void Update()
     {
-
-
-    }
-
-    public static void ResetVariables()
-    {
-
+        if (startTime)
+        {
+            CountTime();
+            //Timer = -1 * Time.deltaTime;
+        }
 
     }
 

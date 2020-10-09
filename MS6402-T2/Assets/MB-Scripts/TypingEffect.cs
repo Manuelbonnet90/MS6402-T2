@@ -50,6 +50,7 @@ public class TypingEffect : MonoBehaviour
         {
             countdownText.GetComponent<Text>().enabled = false;
             animator.SetBool("IsOpen", false);
+            GM.StartTime();
             StopAllCoroutines();
         }
     }
